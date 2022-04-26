@@ -97,9 +97,9 @@ body {
 	position: absolute;
 	background-color: red;
 	width: 60%;
-	height: 15%;
+	height: 0%; /*increase height to observe changes in cookies container*/
 	left: 20%;
-	bottom: 20%;
+	bottom: 30%;
 	display: flex;
 	flex-direction: column;
 	text-align: center;
@@ -116,8 +116,8 @@ body {
 .button{
 	position: absolute;
 	background-color: #ffe866;
-	width: 20%;
-	height: 40%;
+	width: 15%;
+	height: 25%;
 	flex: 1;
 	font-size: 30px;
 	text-align: center;
@@ -128,9 +128,13 @@ body {
 }
 
 #accept{
-	left: 25%;
+	left: 31%;
 }
 
 #decline{
-	right: 25%;
+	right: 33%;
+}
+
+#accept:hover, #decline:hover{
+	color: #ffe866;
 }
