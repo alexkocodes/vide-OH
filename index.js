@@ -284,7 +284,7 @@ accept.addEventListener('click', function(){
   window.location = "intro.html";
 });
 
-decl.addEventListener('click', function(){
+decl.addEventListener('click', function(){ // annoy the user
   alert("You must accept all cookies to proceed");
 });
 

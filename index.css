@@ -100,6 +100,7 @@ body {
 	height: 0%; /*increase height to observe changes in cookies container*/
 	left: 20%;
 	bottom: 30%;
+    top: 60%;
 	display: flex;
 	flex-direction: column;
 	text-align: center;
@@ -127,12 +128,18 @@ body {
 	margin-top: 3%;
 }
 
+.button div:hover{
+    background-color: rgb(79, 0, 0);
+}
+
 #accept{
 	left: 31%;
+    cursor: pointer;
 }
 
 #decline{
 	right: 33%;
+    cursor: pointer;
 }
 
 #accept:hover, #decline:hover{
