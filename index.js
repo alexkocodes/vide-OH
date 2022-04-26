@@ -1,3 +1,6 @@
+//loading aos library
+window.addEventListener('load', function() { AOS.init(); });
+
 var canvas = document.getElementById('nokey'),
    can_w = parseInt(canvas.getAttribute('width')),
    can_h = parseInt(canvas.getAttribute('height')),
@@ -270,6 +273,19 @@ canvas.addEventListener('mousemove', function(e){
     mouse_ball.x = e.pageX;
     mouse_ball.y = e.pageY;
     // console.log(mouse_ball);
+});
+
+
+//BUTTONS - TITLE PAGE
+var accept = document.getElementById("accept");
+var decl = document.getElementById("decline");
+
+accept.addEventListener('click', function(){
+  window.location = "intro.html";
+});
+
+decl.addEventListener('click', function(){
+  alert("You must accept all cookies to proceed");
 });
 
 
