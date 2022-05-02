@@ -276,9 +276,10 @@ canvas.addEventListener('mousemove', function(e){
 });
 
 
-//BUTTONS - TITLE PAGE
+//BUTTONS
 var accept = document.getElementById("accept");
 var decl = document.getElementById("decline");
+var intro = document.getElementsByClassName("intro"); //make intro disappear????????????????????
 
 accept.addEventListener('click', function(){
   window.location = "intro.html";
@@ -287,6 +288,9 @@ accept.addEventListener('click', function(){
 decl.addEventListener('click', function(){ // annoy the user
   alert("You must accept all cookies to proceed");
 });
+
+
+
 
 
 

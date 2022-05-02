@@ -92,6 +92,9 @@ body {
   }
 }
 
+.intro{  /*????????????????????????*/
+  display: inline-block;
+}
 
 .cookies{
 	position: absolute;
@@ -106,6 +109,18 @@ body {
 	text-align: center;
 }
 
+.video{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 15%;
+  top: 8%;
+}
+
+.video video{
+  width: 70%;
+}
+
 .text{
 	font-size: 22px;
 }
@@ -118,7 +133,7 @@ body {
 	position: absolute;
 	background-color: #ffe866;
 	width: 15%;
-	height: 25%;
+	height: 25%;  /*25% originally*/
 	flex: 1;
 	font-size: 30px;
 	text-align: center;
@@ -142,6 +157,18 @@ body {
     cursor: pointer;
 }
 
-#accept:hover, #decline:hover{
+#accept:hover, #decline:hover, #next:hover, #prev:hover{
 	color: #ffe866;
+}
+
+#next{
+  right: 0;
+  margin-top: 25%;
+  color: white;
+}
+
+#prev{
+  left: 0;
+  margin-top: 25%;
+  color: white;
 }
