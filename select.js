@@ -276,17 +276,131 @@ canvas.addEventListener('mousemove', function(e){
 });
 
 
+//OVERLAYS
 
-//BUTTONS
-var accept = document.getElementById("accept");
-var decl = document.getElementById("decline");
+var notZ = true;
+var notD = true;
+var notA = true;
+var notK = true;
 
-accept.addEventListener('click', function(){
-  window.location = "intro.html";
+var overlay = document.getElementById("overlay");
+var h1 = document.getElementById("notZaeem");
+var h2 = document.getElementById("notDhurba");
+var h3 = document.getElementById("notAlex");
+var h4 = document.getElementById("notKeji");
+
+var cross = document.getElementById("cross");
+
+cross.addEventListener('click', function(){ // annoy the user
+  overlay.style.display = "none";
+  h1.style.display = "none";
+  h2.style.display = "none";
+  h3.style.display = "none";
+  h4.style.display = "none";
+
+  if (allT) {
+    window.location = "finalvid.html";
+  }
+
 });
 
-decl.addEventListener('click', function(){ // annoy the user
-  alert("You must accept all cookies to proceed");
+
+//Clicking on all images should lead to next page
+//ALSO! Clicking on each image should grayscale it to show it has been selected already
+
+var aT = false;
+var bT = false;
+var cT = false;
+var dT = false;
+var allT = false;
+
+var a = document.getElementById("a");
+a.addEventListener('click', function(){ // annoy the user
+  aT = true;
+
+  if (notZ) {
+    overlay.style.display = "block";
+    h1.style.display = "block";
+    notZ = false;
+  }
+  
+  a.style.filter = "grayscale(100%)";
+
+  if (aT && bT && cT && dT) {
+    allT = true;
+  }
 });
+
+
+
+var b = document.getElementById("b");
+b.addEventListener('click', function(){ // annoy the user
+  bT = true;
+
+  if (notD) {
+    overlay.style.display = "block";
+    h2.style.display = "block";
+    notD = false;
+  }
+
+  b.style.filter = "grayscale(100%)";
+
+  if (aT && bT && cT && dT) {
+    allT = true;
+  }
+});
+
+var c = document.getElementById("c");
+c.addEventListener('click', function(){ // annoy the user
+  cT = true;
+
+  if (notA) {
+    overlay.style.display = "block";
+    h3.style.display = "block";
+    notA = false;
+  }
+
+  c.style.filter = "grayscale(100%)";
+
+  if (aT && bT && cT && dT) {
+    allT = true;
+  }
+});
+
+var d = document.getElementById("d");
+d.addEventListener('click', function(){ // annoy the user
+  dT = true;
+
+  if (notK) {
+    overlay.style.display = "block";
+    h4.style.display = "block";
+    notK = false;
+  }
+
+  d.style.filter = "grayscale(100%)";
+
+  if (aT && bT && cT && dT) {
+    allT = true;
+  }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

@@ -157,7 +157,7 @@ body {
     cursor: pointer;
 }
 
-#accept:hover, #decline:hover, #next:hover, #prev:hover{
+#accept:hover, #decline:hover, #next:hover, #prev:hover, #cross:hover{
 	color: #ffe866;
 }
 
@@ -171,4 +171,122 @@ body {
   left: 0;
   margin-top: 25%;
   color: white;
+}
+
+.container{
+  position: absolute;
+  background-color: red;
+  width: 60%;
+  height: 0%; /*increase height to observe changes in cookies container*/
+  left: 20%;
+  bottom: 30%;
+  top: 5%; 
+}
+
+.pins{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+}
+
+.pins img{
+  opacity: 0.6;
+}
+
+.pins img:hover{
+  border-left: 5px solid #c62d1f;
+  border-right: 5px solid #c62d1f;
+  border-bottom: 5px solid #c62d1f;
+  border-top: 0px;
+  border-style: dashed;
+  opacity: 1;
+}
+
+.gray { 
+  filter: grayscale(90%);
+}
+
+.pin1{
+  flex: 1;
+  width: 50%;
+}
+
+.pin1 img{
+  margin-left: 20%;
+  margin-bottom: 10%;
+  cursor: pointer;
+}
+
+.pin2{
+  flex: 1;
+  width: 50%;
+}
+
+.pin2 img{
+  margin-right: 20%;
+  margin-bottom: 10%;
+  cursor: pointer;
+}
+
+.who{
+  font-size: 35px;
+}
+
+.title1 {
+  text-align: center;
+  position: relative;
+  margin-top: -3%;
+}
+
+#overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  text-align: center;
+  display: none;
+}
+
+.title2 {
+  position: absolute;
+  left: 30%;
+  bottom: 30%;
+  color: white;
+  opacity: 1;
+  display: none;
+}
+
+#notDhurba{
+  left: 28%;
+}
+
+#notAlex{
+  left: 33.5%;
+}
+
+#notKeji{
+  left: 35%;
+}
+
+#cross{
+  position: absolute;
+  background-color: #ffe866;
+  width: 15%;
+  height: 0%;  /*25% originally*/
+  font-size: 30px;
+  text-align: center;
+  left: 65%;
+  bottom: 70%;
+  color: white;
+  cursor: pointer;
+}
+
+.cover{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.7;
 }
