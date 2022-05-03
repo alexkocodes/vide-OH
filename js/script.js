@@ -11,20 +11,19 @@ document.querySelector("#h2title").addEventListener("click", () => {
     showElemNow.classList.add("animate__animated");
     showElemNow.classList.add("animate__fadeInUp");
     showElemNow.style.display = "block";
-    var outerHolder = document.getElementById('outerHolder');
     var innerHolder = document.getElementById('innerHolder');
     var allImgList = document.querySelectorAll('#innerHolder img');
     // global variables for applying the transform change
     var changeX = 0, changeY = 0, transInX = 0, transInY = 10;
     var myRippleEff; // global interval
 
-    const init = (delayTime) => {
+    const setupImgs = () => {
       // inital setup for the Images to setup in position
       for (let i = 0; i < allImgList.length; i++) {
         // Inital move by calculating positions
-        allImgList[i].style.transform = "rotateY(" + (i * (360 / allImgList.length)) + "deg) translateZ(330px)";
+        allImgList[i].style.transform = "rotateY(" + (i * (360 / allImgList.length)) + "deg) translateZ(350px)";
         allImgList[i].style.transition = "transform 1s";
-        allImgList[i].style.transitionDelay = delayTime || (allImgList.length - i) / 4 + "s";
+        allImgList[i].style.transitionDelay = (allImgList.length - i) / 4 + "s";
         // play pause on hover
         allImgList[i].onmouseover = (e) => {
           innerHolder.style.animationPlayState = 'paused';
@@ -77,14 +76,14 @@ document.querySelector("#h2title").addEventListener("click", () => {
         });
       }
     }
-    setTimeout(init, 1000);
+    setTimeout(setupImgs, 1000);
 
     // function that changes the position
     const dragHolder = () => {
       // Prevent the angle
       if (transInY > 60) transInY = 60;
       if (transInY < -30) transInY = -30;
-      outerHolder.style.transform = "rotateX(" + (-transInY) + "deg) rotateY(" + (transInX) + "deg)";
+      document.getElementById('outerHolder').style.transform = "rotateX(" + (-transInY) + "deg) rotateY(" + (transInX) + "deg)";
     }
 
     // rotating divs as mouse moved
@@ -97,8 +96,8 @@ document.querySelector("#h2title").addEventListener("click", () => {
         changeX = itmX - itmXpos;
         changeY = itmY - itmYpos;
         // calculate the difference and move it there 0.1 = speed
-        transInX += changeX * 0.1;
-        transInY += changeY * 0.1;
+        transInX += changeX * 0.12;
+        transInY += changeY * 0.12;
         dragHolder();
         // new positions
         itmXpos = itmX;
@@ -110,8 +109,8 @@ document.querySelector("#h2title").addEventListener("click", () => {
         myRippleEff = setInterval(() => {
           changeX *= 0.95;
           changeY *= 0.95;
-          transInX += changeX * 0.1;
-          transInY += changeY * 0.1;
+          transInX += changeX * 0.12;
+          transInY += changeY * 0.12;
           dragHolder();
           // stop ripple when the speed decreases to a value
           if (Math.abs(changeX) < 0.6 && Math.abs(changeY) < 0.6) {
@@ -119,7 +118,8 @@ document.querySelector("#h2title").addEventListener("click", () => {
           }
         }, 10);
         // reset
-        document.onpointermove = document.onpointerup = null;
+        document.onpointermove = null;
+        document.onpointerup = null;
       };
 
       // to prevent selection 
