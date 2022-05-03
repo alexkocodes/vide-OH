@@ -161,6 +161,10 @@ body {
 	color: #ffe866;
 }
 
+/* intro video  */
+.introVideoDiv {
+  display: none;
+}
 #next{
   right: 0;
   margin-top: 25%;
