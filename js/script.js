@@ -34,8 +34,8 @@ document.querySelector("#h2title").addEventListener("click", () => {
         // click events
         allImgList[i].addEventListener('click', () => {
           if (i === 0) {
-            console.log("Zaaem clicked");
-            $(".dummy").text("Zaaem");
+            console.log("Zaeem clicked");
+            $(".dummy").text("Zaeem");
             // todo video for zaem
           } else if (i === 1) {
             console.log("Dhurba clicked");

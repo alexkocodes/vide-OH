@@ -254,7 +254,8 @@ canvas {
 .title1 {
   text-align: center;
   position: relative;
-  margin-top: -3%;
+  margin-top: 0;
+  margin-bottom: 3%;
   transition: all 10s ease;
 }
 
@@ -270,23 +271,23 @@ canvas {
 
 .title2 {
   position: absolute;
-  left: 30%;
-  bottom: 30%;
+  left: 37%;
+  bottom: 45%;
   color: white;
   opacity: 1;
   display: none;
 }
 
 #notDhurba {
-  left: 28%;
+  left: 36%;
 }
 
 #notAlex {
-  left: 33.5%;
+  left: 39.5%;
 }
 
 #notKeji {
-  left: 35%;
+  left: 41%;
 }
 
 #cross {
