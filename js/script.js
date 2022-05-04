@@ -87,43 +87,45 @@ document.querySelector("#h2title").addEventListener("click", () => {
     }
 
     // rotating divs as mouse moved
+    var itmXpos, itmYpos;
     document.onpointerdown = (e) => {
       if (myRippleEff) clearInterval(myRippleEff);
-      var itmXpos = e.clientX, itmYpos = e.clientY;
+      itmXpos = e.clientX;
+      itmYpos = e.clientY;
       // move the div according to te mouse position
-      document.onpointermove = (e) => {
-        let itmX = e.clientX, itmY = e.clientY;
-        changeX = itmX - itmXpos;
-        changeY = itmY - itmYpos;
-        // calculate the difference and move it there 0.1 = speed
+      document.addEventListener("pointermove", moveElem);
+      document.addEventListener("pointerup", moveStopped);
+      // to prevent selection 
+      return false;
+    };
+    const moveElem = (e) => {
+      let itmX = e.clientX, itmY = e.clientY;
+      changeX = itmX - itmXpos;
+      changeY = itmY - itmYpos;
+      // calculate the difference and move it there 0.1 = speed
+      transInX += changeX * 0.12;
+      transInY += changeY * 0.12;
+      dragHolder();
+      // new positions
+      itmXpos = itmX;
+      itmYpos = itmY;
+    };
+    const moveStopped = (e) => {
+      // for ripple effect
+      myRippleEff = setInterval(() => {
+        changeX *= 0.95;
+        changeY *= 0.95;
         transInX += changeX * 0.12;
         transInY += changeY * 0.12;
         dragHolder();
-        // new positions
-        itmXpos = itmX;
-        itmYpos = itmY;
-      };
-
-      document.onpointerup = (e) => {
-        // for ripple effect
-        myRippleEff = setInterval(() => {
-          changeX *= 0.95;
-          changeY *= 0.95;
-          transInX += changeX * 0.12;
-          transInY += changeY * 0.12;
-          dragHolder();
-          // stop ripple when the speed decreases to a value
-          if (Math.abs(changeX) < 0.6 && Math.abs(changeY) < 0.6) {
-            clearInterval(myRippleEff);
-          }
-        }, 10);
-        // reset
-        document.onpointermove = null;
-        document.onpointerup = null;
-      };
-
-      // to prevent selection 
-      return false;
+        // stop ripple when the speed decreases to a value
+        if (Math.abs(changeX) < 0.6 && Math.abs(changeY) < 0.6) {
+          clearInterval(myRippleEff);
+        }
+      }, 10);
+      // reset
+      document.removeEventListener("pointermove", moveElem);
+      document.removeEventListener("pointerup", moveStopped);
     };
 
 
