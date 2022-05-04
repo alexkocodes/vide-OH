@@ -260,4 +260,11 @@ decl.addEventListener('click', function () { // annoy the user
     alert("You must accept all cookies to proceed");
 });
 
+let read = document.getElementById("read");
+read.addEventListener("click", function(){
+    $(".homepageDiv").fadeOut("slow", () => {
+        $(".policyDiv").fadeIn("slow");
+        document.querySelector(".policyDiv").style.display = "block";
+    })
+})
 

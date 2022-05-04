@@ -12,6 +12,9 @@ body {
   background-color: #111;
   overflow: hidden;
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .homepageDiv {
   height: 100vh;
@@ -166,6 +169,10 @@ canvas {
   cursor: pointer;
 }
 
+#read{
+  cursor: pointer;
+}
+
 #accept:hover,
 #h2title:hover,
 #decline:hover,
@@ -179,6 +186,44 @@ canvas {
 .introVideoDiv {
   display: none;
 }
+
+.policyDiv{
+  display: none;
+  position: absolute;
+}
+
+#inner_container{
+  width: 400px;
+  height: 430px;
+  border: #fff 0.5px solid;
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+}
+
+#back{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 30px;
+  height: 30px;
+}
+
+#back p{
+  font-size: 40px;
+  color: white;
+  margin: 5px;
+}
+
+#text_area{
+  position: relative;
+  overflow: scroll;
+  top: 30px;
+  height: 350px;
+}
 #next {
   right: 0;
   margin-top: 25%;
@@ -190,6 +235,8 @@ canvas {
   margin-top: 25%;
   color: white;
 }
+
+
 
 .container {
   position: absolute;
@@ -318,7 +365,7 @@ canvas {
 .showImagesList {
   display: none;
   transform-style: preserve-3d;
-  margin-top: 200px;
+  margin-top: -80px;
   /* transition: all 0.5s linear; */
 }
 #outerHolder,
