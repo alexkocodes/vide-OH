@@ -130,5 +130,5 @@ document.querySelector("#h2title").addEventListener("click", () => {
 
 
     // end
-  }, 700);
+  }, 1000);
 });
