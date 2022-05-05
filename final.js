@@ -279,8 +279,8 @@ canvas.addEventListener('mousemove', function(e){
 //OVERLAYS
 
 var overlay = document.getElementById("overlay");
-var cross = document.getElementById("cross");
-var video = document.getElementById("video");
+var cross = document.getElementById("cross2");
+var video = document.getElementById("flashbackVid");
 var h = document.getElementById("finalOver");
 
 cross.addEventListener('click', function(){ // annoy the user

@@ -130,6 +130,16 @@ canvas {
   margin: 0 auto;
 }
 
+
+#flashbackVid2 {
+  min-width: 90%;
+  min-height: 90%;
+  max-width: 90%;
+  max-height: 90%;
+  width: auto;
+  height: auto;
+}
+
 .text {
   font-size: 22px;
 }
@@ -373,6 +383,10 @@ canvas {
   display: none;
 }
 
+#overlay iframe{
+  position: absolute;
+}
+
 .title2 {
   position: absolute;
   left: 37%;
@@ -395,7 +409,8 @@ canvas {
 }
 
 #finalOver {
-  left: 24%;
+  left: 45%;
+  top: 5%;
 }
 
 #cross {
@@ -409,6 +424,25 @@ canvas {
   bottom: 70%;
   color: white;
   cursor: pointer;
+}
+
+#cross2 {
+  position: absolute;
+  background-color: #ffe866;
+  width: 15%;
+  height: 0%; /*25% originally*/
+  font-size: 30px;
+  text-align: center;
+  left: 80%;
+  bottom: 90%;
+  color: white;
+  cursor: pointer;
+}
+
+.overText2{
+  font-size: 40px;
+  margin-top:  0;
+  left: 0;
 }
 
 .cover {
