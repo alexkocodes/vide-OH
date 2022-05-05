@@ -1,13 +1,11 @@
 document.querySelector("#h2title").addEventListener("click", () => {
   // variable to keep track of which video is played
   var curVideONum = 0;
-  // to check if the image is clicked
-  var clicked = false;
   let myTitleChnge = document.querySelector("#h2title");
   // for animating the hear their stories text
-  document.querySelector(".initialTitleHOlder").style.top = "10px";
+  document.querySelector(".initialTitleHOlder").style.top = "-20px";
   myTitleChnge.style.fontSize = "56px";
-  myTitleChnge.innerText = "Hear their stories . . .";
+  myTitleChnge.style.letterSpacing = "5px";
   myTitleChnge.style.background = "none";
   document.querySelector(".whodoYouthinkTitle").style.visibility = "hidden";
   setTimeout(() => {
@@ -21,6 +19,7 @@ document.querySelector("#h2title").addEventListener("click", () => {
     // allImgList = allImgList.reverse();
     // global variables for applying the transform change
     var changeX = 0, changeY = 0, transInX = 0, transInY = 10;
+    var slider = document.getElementById("myRange");
     var myRippleEff; // global interval
 
     const setupImgs = () => {
@@ -32,20 +31,17 @@ document.querySelector("#h2title").addEventListener("click", () => {
         } else {
           allImgList[i].style.filter = "grayscale(100%)";
         }
-        allImgList[i].style.transform = "rotateY(" + (i * (360 / allImgList.length)) + "deg) translateZ(380px)";
+        allImgList[i].style.transform = "rotateY(" + (i * (360 / allImgList.length)) + "deg) translateZ(400px)";
         allImgList[i].style.transition = "transform 1s";
         allImgList[i].style.transitionDelay = (allImgList.length - i) / 4 + "s";
         // play pause on hover
         allImgList[i].onmouseover = (e) => {
-          if (clicked || curVideONum != (allImgList.length - i - 1)) {
+          if (curVideONum != (allImgList.length - i - 1)) {
             return;
           }
           innerHolder.style.animationPlayState = 'paused';
         }
         allImgList[i].onmouseout = (e) => {
-          if (clicked || curVideONum != (allImgList.length - i - 1)) {
-            return;
-          }
           innerHolder.style.animationPlayState = 'running';
         }
         // click events
@@ -56,8 +52,6 @@ document.querySelector("#h2title").addEventListener("click", () => {
           }
           // greyscale the prev and color the new one
           curVideONum++;
-
-
           setTimeout(() => {
             allImgList[i].style.filter = "grayscale(100%)";
             if (curVideONum < allImgList.length) {
@@ -65,26 +59,26 @@ document.querySelector("#h2title").addEventListener("click", () => {
             }
           }, 1000);
 
-          innerHolder.style.animationPlayState = 'paused';
-          clicked = true;
           if (i === 0) {
-            console.log("Keji clicked");
+            allImgList[i].src = "images/tickImg/Keji.png";
             // todo video for Keji
             $(".dummy").text("Keji");
           } else if (i === 1) {
-            console.log("Alex clicked");
+            allImgList[i].src = "images/tickImg/Alex.png"
             $(".dummy").text("Alex");
 
             // todo video for Alex
 
           } else if (i === 2) {
-            console.log("Dhurba clicked");
+            allImgList[i].src = "images/tickImg/Dhurba.png"
+
             $(".dummy").text("Dhurba");
 
             // todo video for Dhurba
 
           } else if (i === 3) {
-            console.log("Zaeem clicked");
+            allImgList[i].src = "images/tickImg/Zaeem.png"
+
             $(".dummy").text("Zaeem");
             // todo video for zaem
 
@@ -97,7 +91,10 @@ document.querySelector("#h2title").addEventListener("click", () => {
           // when the close button is clicked 
           $(".closeX").on("click", () => {
             showVideoDiv.classList.add("animate__zoomOutDown");
-            clicked = false;
+            if (curVideONum >= allImgList.length) {
+              console.log("all stories");
+              $(".nextPageButton").fadeIn("slow");
+            }
             setTimeout(() => {
               showVideoDiv.classList.remove("animate__zoomOutDown");
               showVideoDiv.classList.remove("animate__zoomInUp");
@@ -125,11 +122,15 @@ document.querySelector("#h2title").addEventListener("click", () => {
       if (transInY > 60) transInY = 60;
       if (transInY < -30) transInY = -30;
       document.getElementById('outerHolder').style.transform = "rotateX(" + (-transInY) + "deg) rotateY(" + (transInX) + "deg)";
-    }
+    };
 
+    $(slider).show();
     // rotating divs as mouse moved
     var itmXpos, itmYpos;
     document.onpointerdown = (e) => {
+      if (e.target === slider) {
+        return true;
+      }
       if (myRippleEff) clearInterval(myRippleEff);
       itmXpos = e.clientX;
       itmYpos = e.clientY;
@@ -139,6 +140,18 @@ document.querySelector("#h2title").addEventListener("click", () => {
       // to prevent selection 
       return false;
     };
+    // for slider
+    slider.oninput = (e) => {
+      // output.innerHTML = this.value;
+      let rotWidth = e.target.value * 8;
+      // translate by z for all images
+      for (let i = 0; i < allImgList.length; i++) {
+        // Inital move by calculating positions
+        allImgList[i].style.transform = "rotateY(" + (i * (360 / allImgList.length)) + "deg) translateZ(" + rotWidth + "px)";
+        allImgList[i].style.transitionDelay = "0s";
+      }
+      // end for 
+    }
     const moveElem = (e) => {
       let itmX = e.clientX, itmY = e.clientY;
       changeX = itmX - itmXpos;
@@ -158,6 +171,7 @@ document.querySelector("#h2title").addEventListener("click", () => {
         changeY *= 0.95;
         transInX += changeX * 0.12;
         transInY += changeY * 0.12;
+        // update 
         dragHolder();
         // stop ripple when the speed decreases to a value
         if (Math.abs(changeX) < 0.6 && Math.abs(changeY) < 0.6) {
