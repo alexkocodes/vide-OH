@@ -21,7 +21,7 @@ document.querySelector("#h2title").addEventListener("click", () => {
       // inital setup for the Images to setup in position
       for (let i = 0; i < allImgList.length; i++) {
         // Inital move by calculating positions
-        allImgList[i].style.transform = "rotateY(" + (i * (360 / allImgList.length)) + "deg) translateZ(350px)";
+        allImgList[i].style.transform = "rotateY(" + (i * (360 / allImgList.length)) + "deg) translateZ(380px)";
         allImgList[i].style.transition = "transform 1s";
         allImgList[i].style.transitionDelay = (allImgList.length - i) / 4 + "s";
         // play pause on hover

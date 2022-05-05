@@ -113,16 +113,17 @@ canvas {
 
 .video {
   position: absolute;
+  text-align: center;
   width: 100%;
-  height: 100%;
-  left: 15%;
-  top: 8%;
+  margin: 0 auto;
+  left: 0px;
+  top: 0px;
 }
-
 .video video {
-  width: 70%;
+  max-width: 100vw;
+  max-height: 100vh;
+  margin: 0 auto;
 }
-
 .video2 {
   position: absolute;
   width: 100%;
@@ -131,10 +132,9 @@ canvas {
   margin-top: 5%;
 }
 
-.video2 video {
+/* .video2 video {
   width: 100%;
-}
-
+} */
 
 .text {
   font-size: 22px;
@@ -182,7 +182,7 @@ canvas {
   cursor: pointer;
 }
 
-#read{
+#read {
   cursor: pointer;
 }
 
@@ -200,12 +200,19 @@ canvas {
   display: none;
 }
 
-.policyDiv{
+.policyDiv {
   display: none;
   position: absolute;
 }
 
-#inner_container{
+.susPage {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+#inner_container {
   width: 400px;
   height: 430px;
   border: #fff 0.5px solid;
@@ -214,10 +221,9 @@ canvas {
   display: flex;
   flex-direction: column;
   position: relative;
-
 }
 
-#back{
+#back {
   position: absolute;
   left: 0;
   top: 0;
@@ -225,13 +231,13 @@ canvas {
   height: 30px;
 }
 
-#back p{
+#back p {
   font-size: 40px;
   color: white;
   margin: 5px;
 }
 
-#text_area{
+#text_area {
   position: relative;
   overflow: scroll;
   top: 30px;
@@ -248,8 +254,6 @@ canvas {
   margin-top: 25%;
   color: white;
 }
-
-
 
 .container {
   position: absolute;
@@ -315,7 +319,7 @@ canvas {
   text-align: center;
   position: relative;
   margin-top: 0;
-  margin-bottom: 3%;
+  margin-bottom: 2.5%;
   transition: all 10s ease;
 }
 
@@ -350,7 +354,7 @@ canvas {
   left: 41%;
 }
 
-#finalOver{
+#finalOver {
   left: 24%;
 }
 
@@ -376,13 +380,11 @@ canvas {
 }
 
 /* sus css */
-.whodidit {
-  margin-top: 10px;
-}
+
 .showImagesList {
+  margin-top: 260px;
   display: none;
   transform-style: preserve-3d;
-  margin-top: -80px;
   /* transition: all 0.5s linear; */
 }
 #outerHolder,
@@ -398,7 +400,7 @@ canvas {
   position: absolute;
   left: -120px;
   top: 0;
-  width: 240px;
+  width: 250px;
   height: 310px;
   line-height: 200px;
   font-size: 50px;
@@ -451,7 +453,7 @@ canvas {
   align-items: center;
   justify-content: center;
   transition: all 10s ease;
-  margin-top: 50px;
+  margin-top: 10px;
 }
 .whodoYouthinkTitle {
   transition: all 0.2s ease-out;
@@ -472,7 +474,7 @@ canvas {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: darkgray;
+  background-color: gray;
   z-index: 20;
 }
 .closeX {

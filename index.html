@@ -11,6 +11,7 @@
 	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
 	<title>It's You</title>
 </head>
@@ -68,27 +69,15 @@
 	<!-- intro video play div  -->
 	<div class="introVideoDiv">
 		<div class="main">
-
-
 			<div class="video">
-				<video autoplay controls>
+				<video controls id="ourIntroVid">
 					<source
 						src="https://rr3---sn-4wg7zne7.c.drive.google.com/videoplayback?expire=1651768219&ei=W8NzYvwyw_LVtg_V8K7oAQ&ip=91.230.41.206&cp=QVRKU0hfV1JPSlhPOnBpZDhpZ3k4LVJOdTJPNk1RaXhHZnNGd0pvR2RiWEhYd1FLZ1ZaekFnTEc&id=c5b446e910c6a70b&itag=37&source=webdrive&requiressl=yes&mh=cP&mm=32&mn=sn-4wg7zne7&ms=su&mv=m&mvi=3&pl=24&ttl=transient&susc=dr&driveid=19XZkYgcQGXMioijiR2WTlbLuJHIRDBb3&app=explorer&mime=video/mp4&vprv=1&prv=1&dur=87.817&lmt=1651585558197349&mt=1651753465&subapp=DRIVE_WEB_FILE_VIEWER&txp=0011224&sparams=expire,ei,ip,cp,id,itag,source,requiressl,ttl,susc,driveid,app,mime,vprv,prv,dur,lmt&sig=AOq0QJ8wRAIgX4vAVSEBgUf4EBWH3y94a2AfTtNCfFnNZZe1chZGXzkCIECVYg-28s-Kuzz8WiAaOc6ZZRyC2XvdvX2148SGC_cF&lsparams=mh,mm,mn,ms,mv,mvi,pl&lsig=AG3C_xAwRAIhAKAtCIbMEEkPMUBGNoEnmbqo3jr2oFRqJb4S7mJhDrZKAh8YuHNshAAIGbAssjDemWyA7NAeKw6MCKCJF9mZApNl&cpn=Yx8_6zQ_5SqddA5K&c=WEB_EMBEDDED_PLAYER&cver=1.20220501.00.01"
 						type="video/mp4">
 					You can't load the video because the browser does not support format
 				</video>
-
 			</div>
 
-			<div class="cookies">
-				<div class="buttCont">
-					<a href="sus.html">
-						<div class="button glitch" id="next">
-							<i class="fa-solid fa-circle-right"></i>
-						</div>
-					</a>
-				</div>
-			</div>
 		</div>
 	</div>
 
@@ -222,8 +211,62 @@
 		</div>
 	</div>
 
+	<!-- sus page: individual story page  -->
+	<div class="susPage">
+		<div class="showIndivStory">
+			<div class="closeX">
+				X
+			</div>
+			<p class="dummy">
+				a
+			</p>
+			<!-- video here  -->
+
+		</div>
+
+		<div class="whodidit">
+			<div class="initialTitleHOlder">
+				<div class="title1">
+					<p class="glitch whodoYouthinkTitle">
+						Who do you think installed the malware?
+					</p>
+				</div>
+				<div class="h2TitDivHOlder">
+					<h2 id="h2title">Hear their stories</h2>
+				</div>
+			</div>
+
+			<div class="showImagesList">
+				<div id="outerHolder">
+					<div class="spinIt" id="innerHolder">
+						<img src="images/susImg/Zaeem.jpg" alt="">
+						<img src="images/susImg/Dhurba.jpg" alt="">
+						<img src="images/susImg/Alex.jpg" alt="">
+						<img src="images/susImg/Keji.jpg" alt="">
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="nextPageButton">
+			<div class="buttCont">
+				<a href="select.html">
+					<div class="button22 glitch" id="next">
+						<i class="fa-solid fa-circle-right"></i>
+					</div>
+				</a>
+			</div>
+		</div>
+
+
+	</div>
+	<!-- end of individual story  -->
+
 
 	<script src="js/index.js" defer></script>
+	<script src="js/script.js" defer></script>
+
 
 </body>
 

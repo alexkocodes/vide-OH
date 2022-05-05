@@ -250,10 +250,21 @@ canvas.addEventListener('mousemove', function (e) {
 //BUTTONS
 var accept = document.getElementById("accept");
 var decl = document.getElementById("decline");
+var myIntrovideo = document.getElementById("ourIntroVid");
+myIntrovideo.addEventListener('ended', () => {
+    $(myIntrovideo).hide();
+    $(".susPage").fadeIn();
+
+})
+//display the video
 accept.addEventListener('click', function () {
-    //   window.location = "intro.html";
     $(".homepageDiv").fadeOut("slow", () => {
-        $(".introVideoDiv").fadeIn("slow");
+        $(".introVideoDiv").fadeIn("slow", () => {
+            // play video
+            myIntrovideo.play();
+            // when the video finishes playing
+
+        });
     })
 });
 decl.addEventListener('click', function () { // annoy the user
@@ -261,7 +272,8 @@ decl.addEventListener('click', function () { // annoy the user
 });
 
 let read = document.getElementById("read");
-read.addEventListener("click", function(){
+// display the cookies policy
+read.addEventListener("click", function () {
     $(".homepageDiv").fadeOut("slow", () => {
         $(".policyDiv").fadeIn("slow");
         document.querySelector(".policyDiv").style.display = "block";
