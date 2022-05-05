@@ -254,8 +254,7 @@ var myIntrovideo = document.getElementById("ourIntroVid");
 myIntrovideo.addEventListener('ended', () => {
     $(myIntrovideo).hide();
     $(".susPage").fadeIn();
-
-})
+});
 //display the video
 accept.addEventListener('click', function () {
     $(".homepageDiv").fadeOut("slow", () => {
@@ -265,7 +264,7 @@ accept.addEventListener('click', function () {
             // when the video finishes playing
 
         });
-    })
+    });
 });
 decl.addEventListener('click', function () { // annoy the user
     alert("You must accept all cookies to proceed");
