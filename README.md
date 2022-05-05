@@ -14,7 +14,7 @@ Our wireframe basically consists of an intro page. In this page, the user is ask
 
 The background canvas we chose perfectly summarizes our theme - the interconnectedness of the past, present and future is depicted by the interactive dots that can join based on cursor movement. We used many overlays to include different parts of the site: popups for the videos etc. The special animations we made for the interrogation selection page rely on CSS animations (rotateX, rotateY etc.).
 
-We also focused on editing our footage to reflect our theme most effectively. From Alex: I played around with a lot of the effects such as fade in fade outc mask, zoom in. I also used some stock videos from online, and audios as well. In the ends I made the glitchy effect on the text by chopping the text later into 8~ pieces. When we were filming, we also thought about how the camera will go from one person to another. We also tried with different lenses to achieve different results.
+We also focused on editing our footage to reflect our theme most effectively. We played around with a lot of the effects such as fade in fade outc mask, zoom in. We also used some stock videos from online, and audios as well. In the end, we made the glitchy effect on the text by chopping the text later into 8~ pieces. When we were filming, we also thought about how the camera will go from one person to another. We also tried with different lenses to achieve different results.
 
 Reflection/Evaluation: This should bookend the initial concept and talk about whether your expectations and goals were met in the process of building the final working version.
 
