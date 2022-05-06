@@ -27,6 +27,7 @@ document.querySelector("#h2title").addEventListener("click", () => {
     // global variables for applying the transform change
     var changeX = 0, changeY = 0, transInX = 0, transInY = 10;
     var slider = document.getElementById("myRange");
+    // var individualStoryVid = document.getElementById("indivStoryVid");
     var myRippleEff; // global interval
 
     const setupImgs = () => {
@@ -64,51 +65,54 @@ document.querySelector("#h2title").addEventListener("click", () => {
             if (curVideONum < allImgList.length) {
               allImgList[allImgList.length - curVideONum - 1].style.filter = "grayscale(0%)";
             }
+            // individualStoryVid.play();
           }, 1000);
 
           if (i === 0) {
             allImgList[i].src = "images/tickImg/Keji.png";
             // todo video for Keji
-            $(".dummy").text("Keji");
 
-            k.style.display="block";
-            z.style.display="none";
-              d.style.display="none";
-              a.style.display="none";
+            k.style.display = "block";
+            z.style.display = "none";
+            d.style.display = "none";
+            a.style.display = "none";
 
           } else if (i === 1) {
             allImgList[i].src = "images/tickImg/Alex.png"
-            $(".dummy").text("Alex");
+            // document.querySelector("#indivStoryVid source").src = "videos/alex.mp4";
 
-            a.style.display="block";
-            z.style.display="none";
-              d.style.display="none";
-              k.style.display="none";
+
+            a.style.display = "block";
+            z.style.display = "none";
+            d.style.display = "none";
+            k.style.display = "none";
 
 
           } else if (i === 2) {
             allImgList[i].src = "images/tickImg/Dhurba.png"
 
-            $(".dummy").text("Dhurba");
+            // document.querySelector("#indivStoryVid source").src = "videos/keji.mp4";
 
-            d.style.display="block";
+            d.style.display = "block";
 
-            z.style.display="none";
-              a.style.display="none";
-              k.style.display="none";
+            z.style.display = "none";
+            a.style.display = "none";
+            k.style.display = "none";
 
           } else if (i === 3) {
             allImgList[i].src = "images/tickImg/Zaeem.png"
+            // document.querySelector("#indivStoryVid source").src = "videos/zaaem.mp4";
 
-            $(".dummy").text("Zaeem");
-            
-            z.style.display="block";
+            // $(".dummy").text("Zaeem");
 
-            d.style.display="none";
-            a.style.display="none";
-            k.style.display="none";
+            z.style.display = "block";
+
+            d.style.display = "none";
+            a.style.display = "none";
+            k.style.display = "none";
 
           }
+          // individualStoryVid.load();
           var showVideoDiv = document.querySelector(".showIndivStory");
 
           showVideoDiv.classList.add("animate__animated");
@@ -117,6 +121,7 @@ document.querySelector("#h2title").addEventListener("click", () => {
           // when the close button is clicked 
           $(".closeX").on("click", () => {
             showVideoDiv.classList.add("animate__zoomOutDown");
+            // individualStoryVid.pause();
             if (curVideONum >= allImgList.length) {
               console.log("all stories");
 
