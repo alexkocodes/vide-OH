@@ -591,3 +591,18 @@ canvas {
   background-color: transparent;
   display: none;
 }
+
+
+.vid, .showIndivStory iframe {
+  display: none;
+  position: absolute;
+  min-width: 90%;
+  min-height: 90%;
+  max-width: 90%;
+  max-height: 90%;
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+  left: 5%;
+  top: 7%;
+}

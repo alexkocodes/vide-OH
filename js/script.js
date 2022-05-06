@@ -1,3 +1,10 @@
+var z = document.getElementById("z");
+var d = document.getElementById("d");
+var a = document.getElementById("a");
+var k = document.getElementById("k");
+
+
+
 document.querySelector("#h2title").addEventListener("click", () => {
   // variable to keep track of which video is played
   var curVideONum = 0;
@@ -63,24 +70,43 @@ document.querySelector("#h2title").addEventListener("click", () => {
             allImgList[i].src = "images/tickImg/Keji.png";
             // todo video for Keji
             $(".dummy").text("Keji");
+
+            k.style.display="block";
+            z.style.display="none";
+              d.style.display="none";
+              a.style.display="none";
+
           } else if (i === 1) {
             allImgList[i].src = "images/tickImg/Alex.png"
             $(".dummy").text("Alex");
 
-            // todo video for Alex
+            a.style.display="block";
+            z.style.display="none";
+              d.style.display="none";
+              k.style.display="none";
+
 
           } else if (i === 2) {
             allImgList[i].src = "images/tickImg/Dhurba.png"
 
             $(".dummy").text("Dhurba");
 
-            // todo video for Dhurba
+            d.style.display="block";
+
+            z.style.display="none";
+              a.style.display="none";
+              k.style.display="none";
 
           } else if (i === 3) {
             allImgList[i].src = "images/tickImg/Zaeem.png"
 
             $(".dummy").text("Zaeem");
-            // todo video for zaem
+            
+            z.style.display="block";
+
+            d.style.display="none";
+            a.style.display="none";
+            k.style.display="none";
 
           }
           var showVideoDiv = document.querySelector(".showIndivStory");
@@ -93,6 +119,12 @@ document.querySelector("#h2title").addEventListener("click", () => {
             showVideoDiv.classList.add("animate__zoomOutDown");
             if (curVideONum >= allImgList.length) {
               console.log("all stories");
+
+              // z.style.display="none";
+              // d.style.display="none";
+              // a.style.display="none";
+              // k.style.display="none";
+
               $(".nextPageButton").fadeIn("slow");
             }
             setTimeout(() => {
