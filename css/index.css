@@ -131,13 +131,17 @@ canvas {
 }
 
 
-#flashbackVid2 {
+#flashbackVid2, #overlay iframe {
+  position: absolute;
   min-width: 90%;
   min-height: 90%;
   max-width: 90%;
   max-height: 90%;
   width: auto;
   height: auto;
+  margin: 0 auto;
+  left: 5%;
+  top: 7%;
 }
 
 .text {
@@ -383,10 +387,6 @@ canvas {
   display: none;
 }
 
-#overlay iframe{
-  position: absolute;
-}
-
 .title2 {
   position: absolute;
   left: 37%;
@@ -394,6 +394,7 @@ canvas {
   color: white;
   opacity: 1;
   display: none;
+  height: 10%;
 }
 
 #notDhurba {
@@ -434,7 +435,7 @@ canvas {
   font-size: 30px;
   text-align: center;
   left: 80%;
-  bottom: 90%;
+  bottom: 94%;
   color: white;
   cursor: pointer;
 }
