@@ -199,7 +199,10 @@ canvas {
 #decline:hover,
 #next:hover,
 #prev:hover,
-#cross:hover {
+#cross:hover,
+#cross2:hover,
+#replay:hover
+{
   color: #ffe866;
 }
 
@@ -435,6 +438,20 @@ canvas {
   font-size: 30px;
   text-align: center;
   left: 80%;
+  bottom: 94%;
+  color: white;
+  cursor: pointer;
+}
+
+
+#replay {
+  position: absolute;
+  background-color: #ffe866;
+  width: 15%;
+  height: 0%; /*25% originally*/
+  font-size: 30px;
+  text-align: center;
+  left: 5%;
   bottom: 94%;
   color: white;
   cursor: pointer;

@@ -280,11 +280,16 @@ canvas.addEventListener('mousemove', function(e){
 
 var overlay = document.getElementById("overlay");
 var cross = document.getElementById("cross2");
+var replay = document.getElementById("replay");
 var video = document.getElementById("flashbackVid");
 var h = document.getElementById("finalOver");
 
 cross.addEventListener('click', function(){ // annoy the user
   overlay.style.display = "none";
+});
+
+replay.addEventListener('click', function(){ // annoy the user
+  window.location = "index.html";
 });
 
 //VIDEO
